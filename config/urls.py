@@ -48,7 +48,7 @@ urlpatterns += [
     # API base url
     path("api/", include("config.api_router")),
     # DRF auth token
-    path("auth-token/", obtain_auth_token),
+    path("api/auth-token/", obtain_auth_token),
     path("api/schema/", SpectacularAPIView.as_view(), name="api-schema"),
     path(
         "api/docs/",
@@ -56,6 +56,7 @@ urlpatterns += [
         name="api-docs",
     ),
     re_path(r'^api/auth/', include('djoser.urls')),
+    path(r'api/auth/', include('djoser.urls.authtoken')),
 ]
 
 if settings.DEBUG:

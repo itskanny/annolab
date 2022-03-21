@@ -85,6 +85,7 @@ THIRD_PARTY_APPS = [
     "drf_yasg",
     'djoser',
 
+
 ]
 
 LOCAL_APPS = [
@@ -359,5 +360,10 @@ DJOSER = {
     'SERIALIZERS': {
         'user': 'annolab.users.api.serializers.UserSerializer',
         'current_user': 'annolab.users.api.serializers.UserSerializer',
+        'user_create': 'annolab.users.api.serializers.UserSerializer',
     },
 }
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+]

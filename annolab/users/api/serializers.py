@@ -1,16 +1,16 @@
 from django.contrib.auth import get_user_model
-from rest_framework import serializers
+# from rest_framework import serializers
+from djoser import serializers
 
 User = get_user_model()
 
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.UserCreateSerializer):
     class Meta:
         model = User
-        fields = ["username", "name", "url", "date_of_birth", "avatar"]
+        fields = ["email", "username", "name", "password", "date_of_birth", "avatar", "id"]
         ref_name = 'annolab_user'
 
-        extra_kwargs = {
-            "url": {"view_name": "api:user-detail", "lookup_field": "username"}
-        }
-
+    def create(self, validated_data):
+        validated_data['username'] = validated_data['email']
+        return super(UserSerializer, self).create(validated_data)
