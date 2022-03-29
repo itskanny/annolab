@@ -12,7 +12,7 @@ class User(AbstractUser):
     """
 
     #: First and last name do not cover name patterns around the globe
-    name = CharField(_("Name of User"), blank=True, max_length=255)
+    name = CharField(_("Name of User"), blank=False, max_length=255)
     email = EmailField(unique=True)
     username = CharField(blank=True, null=True, unique=True, max_length=256)
     date_of_birth = DateField(blank=True, null=True)
