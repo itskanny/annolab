@@ -358,8 +358,8 @@ SWAGGER_SETTINGS = {
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
-    'USER_CREATE_PASSWORD_RETYPE': True,
-    "SEND_ACTIVATION_EMAIL": True,
+    'USER_CREATE_PASSWORD_RETYPE': False,
+    "SEND_ACTIVATION_EMAIL": False,
     "ACTIVATION_URL": '#/activate/{uid}/{token}',
     'PASSWORD_RESET_CONFIRM_URL': 'setnewpassword/{uid}/{token}',
     # 'SEND_CONFRIMATION_EMAIL': True,
