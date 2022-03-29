@@ -85,7 +85,6 @@ THIRD_PARTY_APPS = [
     "drf_yasg",
     'djoser',
 
-
 ]
 
 LOCAL_APPS = [
@@ -196,6 +195,7 @@ TEMPLATES = [
                 "django.template.context_processors.tz",
                 "django.contrib.messages.context_processors.messages",
                 "annolab.users.context_processors.allauth_settings",
+                "annolab.context_processors.export_vars"
             ],
         },
     }
@@ -254,7 +254,7 @@ LOGGING = {
     "formatters": {
         "verbose": {
             "format": "%(levelname)s %(asctime)s %(module)s "
-            "%(process)d %(thread)d %(message)s"
+                      "%(process)d %(thread)d %(message)s"
         }
     },
     "handlers": {
@@ -357,13 +357,34 @@ SWAGGER_SETTINGS = {
 }
 
 DJOSER = {
+    'LOGIN_FIELD': 'email',
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    "SEND_ACTIVATION_EMAIL": True,
+    "ACTIVATION_URL": '#/activate/{uid}/{token}',
+    'PASSWORD_RESET_CONFIRM_URL': 'setnewpassword/{uid}/{token}',
+    # 'SEND_CONFRIMATION_EMAIL': True,
+    'PASSWORD_RESET_CONFIRM_RETYPE': True,
     'SERIALIZERS': {
         'user': 'annolab.users.api.serializers.UserSerializer',
         'current_user': 'annolab.users.api.serializers.UserSerializer',
         'user_create': 'annolab.users.api.serializers.UserSerializer',
     },
+    'EMAIL': {
+        'password_reset': 'annolab.users.emails.PasswordResetEmail',
+    },
 }
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+DOMAIN = env('DOMAIN')
+SITE_NAME = env('SITE_NAME')
+
+SEND_SMTP_EMAIL = env("SEND_SMTP_EMAIL", default=False)
+if SEND_SMTP_EMAIL:
+    EMAIL_HOST = env('EMAIL_HOST')
+    EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_PORT = env('EMAIL_PORT')
+    EMAIL_USE_SSL = env('EMAIL_USE_SSL', default=False)
+
+PASSWORD_RESET_CONFIRM_URL = env('PASSWORD_RESET_CONFIRM_URL')
+
+CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS')
