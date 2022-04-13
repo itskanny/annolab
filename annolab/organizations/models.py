@@ -9,5 +9,3 @@ class Organization(models.Model):
     tagline = models.TextField(verbose_name='Organization Tagline')
     avatar = models.ImageField(blank=True, null=True, upload_to='organization_avatars')
     owner = models.ForeignKey(get_user_model(), related_name='organization', on_delete=models.CASCADE)
-
-

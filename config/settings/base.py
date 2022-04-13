@@ -91,6 +91,7 @@ LOCAL_APPS = [
     "annolab.users",
     # Your stuff: custom apps go here
     "annolab.organizations",
+    "annolab.groups"
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -367,7 +368,7 @@ DJOSER = {
     'SERIALIZERS': {
         'user': 'annolab.users.api.serializers.UserSerializer',
         'current_user': 'annolab.users.api.serializers.UserSerializer',
-        'user_create': 'annolab.users.api.serializers.UserSerializer',
+        'user_create': 'annolab.users.api.serializers.UserCreateSerializer',
     },
     'EMAIL': {
         'password_reset': 'annolab.users.emails.PasswordResetEmail',

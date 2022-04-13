@@ -326,6 +326,7 @@ tags
 
 ### Project template
 annolab/media/
+media
 
 .pytest_cache/
 .env
