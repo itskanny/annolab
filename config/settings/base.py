@@ -84,6 +84,7 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "drf_yasg",
     'djoser',
+    'useful',
 
 ]
 
@@ -150,6 +151,8 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.common.BrokenLinkEmailsMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
+    "annolab.organizations.middlewares.middlewares.OrganizationRequiredMiddleware"
 ]
 
 # STATIC
@@ -352,7 +355,7 @@ SWAGGER_SETTINGS = {
         'Organization': {
             'type': 'apiKey',
             'name': 'Organization',
-            'in': 'query'
+            'in': 'header'
         }
     }
 }

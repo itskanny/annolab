@@ -21,7 +21,6 @@ class Migration(migrations.Migration):
                 ('name', models.CharField(max_length=255, unique=True, verbose_name='Organization Name')),
                 ('tagline', models.TextField(verbose_name='Organization Tagline')),
                 ('avatar', models.ImageField(blank=True, null=True, upload_to='organization_avatars')),
-                ('owner', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='organization', to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]
