@@ -84,7 +84,6 @@ THIRD_PARTY_APPS = [
     "drf_spectacular",
     "drf_yasg",
     'djoser',
-    'useful',
 
 ]
 
@@ -92,7 +91,9 @@ LOCAL_APPS = [
     "annolab.users",
     # Your stuff: custom apps go here
     "annolab.organizations",
-    "annolab.groups"
+    "annolab.groups",
+    "annolab.projects",
+    "annolab.teams",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

@@ -15,8 +15,8 @@ User = get_user_model()
 class UserViewSet(RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
-    lookup_field = "username"
-    parser_classes = [MultiPartParser]
+    lookup_field = "id"
+    parser_classes = [MultiPartParser, JSONParser]
 
     def get_queryset(self, *args, **kwargs):
         assert isinstance(self.request.user.id, int)
