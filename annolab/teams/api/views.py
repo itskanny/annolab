@@ -9,3 +9,8 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
     queryset = Team.objects.all()
     parser_classes = [MultiPartParser]
+
+    def get_queryset(self):
+        assert isinstance(self.request.organization.id, int)
+
+        return self.queryset.filter(organization=self.request.organization.id)
