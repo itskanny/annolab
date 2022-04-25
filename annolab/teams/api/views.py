@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from rest_framework.parsers import MultiPartParser
+from rest_framework.parsers import MultiPartParser, JSONParser
 
 from annolab.teams.api.serializer import TeamSerializer
 from annolab.teams.models import Team
@@ -8,7 +8,7 @@ from annolab.teams.models import Team
 class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
     queryset = Team.objects.all()
-    parser_classes = [MultiPartParser]
+    parser_classes = [MultiPartParser, JSONParser]
 
     def get_queryset(self):
         assert isinstance(self.request.organization.id, int)

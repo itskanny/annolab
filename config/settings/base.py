@@ -94,6 +94,7 @@ LOCAL_APPS = [
     "annolab.groups",
     "annolab.projects",
     "annolab.teams",
+    "annolab.images",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -357,6 +358,11 @@ SWAGGER_SETTINGS = {
             'type': 'apiKey',
             'name': 'Organization',
             'in': 'header'
+        },
+        'Project': {
+            'type': 'apiKey',
+            'name': 'pid',
+            'in': 'query'
         }
     }
 }
@@ -393,3 +399,25 @@ if SEND_SMTP_EMAIL:
 PASSWORD_RESET_CONFIRM_URL = env('PASSWORD_RESET_CONFIRM_URL')
 
 CORS_ALLOWED_ORIGINS = env.list('CORS_ALLOWED_ORIGINS')
+
+SPECTACULAR_SETTINGS = {
+    "APPEND_COMPONENTS": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "Authorization"
+            },
+            'Organization': {
+                'type': 'apiKey',
+                'name': 'Organization',
+                'in': 'header'
+            },
+            'Project': {
+                'type': 'apiKey',
+                'name': 'pid',
+                'in': 'query'
+            }
+        }
+    },
+}
