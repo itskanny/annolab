@@ -9,3 +9,6 @@ class Organization(models.Model):
     tagline = models.TextField(verbose_name='organization tagline')
     avatar = models.ImageField(blank=True, null=True, upload_to='organization_avatars')
     owner = models.OneToOneField(get_user_model(), related_name='organization', on_delete=models.CASCADE)
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+

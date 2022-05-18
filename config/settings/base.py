@@ -2,7 +2,7 @@
 Base settings to build other settings files upon.
 """
 from pathlib import Path
-
+from corsheaders.defaults import default_headers
 import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -421,3 +421,7 @@ SPECTACULAR_SETTINGS = {
         }
     },
 }
+
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "Organization",
+]
