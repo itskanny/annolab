@@ -6,7 +6,7 @@ from ..models import Project
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ['id', 'name', 'description', 'avatar', 'organization']
+        fields = ['id', 'name', 'description', 'created_date', 'updated_date', 'avatar', 'organization']
         read_only_fields = ['created_date', 'updated_date']
 
 
@@ -16,5 +16,6 @@ class ProjectListSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ['id', 'name', 'description', 'avatar', 'organization', 'total_images', 'annotated_images']
+        fields = ['id', 'name', 'description', 'avatar', 'created_date', 'updated_date', 'organization', 'total_images',
+                  'annotated_images']
         read_only_fields = ['created_date', 'updated_date']

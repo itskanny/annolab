@@ -6,7 +6,7 @@ from annolab.organizations.models import Organization
 class OrganizationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Organization
-        fields = ['id', 'name', 'tagline', 'avatar', 'owner']
+        fields = ['id', 'name', 'tagline', 'avatar', 'owner', 'created_date', 'updated_date', ]
         read_only_fields = ['created_date', 'updated_date']
         ref_name = 'organizations'
 
