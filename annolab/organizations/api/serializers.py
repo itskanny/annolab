@@ -16,3 +16,14 @@ class OrganizationSerializer(serializers.ModelSerializer):
             return super(OrganizationSerializer, self).create(validated_data)
         except django.db.utils.IntegrityError:
             raise serializers.ValidationError({"name": ["User already has an organization"]})
+
+
+class OrganizationListingSerializer(serializers.ModelSerializer):
+    total_projects = serializers.IntegerField()
+    total_teams = serializers.IntegerField()
+
+    class Meta:
+        model = Organization
+        fields = ['id', 'name', 'tagline', 'avatar', 'owner', 'created_date', 'updated_date',
+                  'total_projects', 'total_teams']
+        read_only_fields = ['created_date', 'updated_date']

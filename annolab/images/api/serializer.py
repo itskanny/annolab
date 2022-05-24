@@ -15,3 +15,10 @@ class ImageSerializer(serializers.ModelSerializer):
 
         return super(ImageSerializer, self).create(validated_data)
 
+    def update(self, instance, validated_data):
+        validated_data['name'] = validated_data['image']
+        print(validated_data)
+
+        return super(ImageSerializer, self).update(instance, validated_data)
+
+

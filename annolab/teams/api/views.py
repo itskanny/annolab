@@ -19,6 +19,6 @@ class TeamViewSet(viewsets.ModelViewSet):
         return self.queryset.filter(organization=self.request.organization.id)
 
     def get_serializer_class(self):
-        if self.action == 'list':
+        if self.action in ['list', 'retrieve']:
             return TeamListingSerializer
         return TeamSerializer
