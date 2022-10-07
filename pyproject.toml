@@ -18,7 +18,7 @@ uvicorn = "^0.17.4"  # https://github.com/encode/uvicorn
 
 # Django
 # ------------------------------------------------------------------------------
-django = "^3.2.12"  # pyup: < 4.0  # https://www.djangoproject.com/
+django = "^3.2.16"  # pyup: < 4.0  # https://www.djangoproject.com/
 django-environ = "^0.8.1"  # https://github.com/joke2k/django-environ
 django-model-utils = "^4.2.0"  # https://github.com/jazzband/django-model-utils
 django-allauth = "^0.48.0"  # https://github.com/pennersr/django-allauth
@@ -59,7 +59,7 @@ sphinx-autobuild = "^2021.3.14" # https://github.com/GaretJax/sphinx-autobuild
 # Code quality
 # ------------------------------------------------------------------------------
 flake8 = "^4.0.1"  # https://github.com/PyCQA/flake8
-flake8-isort = "^4.1.1"  # https://github.com/gforcada/flake8-isort
+flake8-isort = "^4.2.0"  # https://github.com/gforcada/flake8-isort
 coverage = "^6.3.1"  # https://github.com/nedbat/coveragepy
 black = "^22.1.0"  # https://github.com/psf/black
 pylint-django = "^2.5.0"  # https://github.com/PyCQA/pylint-django
