@@ -458,7 +458,7 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-allauth"
-version = "0.48.0"
+version = "0.51.0"
 description = "Integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication."
 category = "main"
 optional = false
@@ -2044,7 +2044,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a2eba352adae9830f8e4e79e3dcdea83c52e288c68751430e970804bfd16214a"
+content-hash = "53f5d4b1df6dfe97f03bdc83ae9b75b84015194dbdd93edb60a3639ca4d7ca4f"
 
 [metadata.files]
 alabaster = [
@@ -2337,7 +2337,7 @@ Django = [
     {file = "Django-3.2.16.tar.gz", hash = "sha256:3adc285124244724a394fa9b9839cc8cd116faf7d159554c43ecdaa8cdf0b94d"},
 ]
 django-allauth = [
-    {file = "django-allauth-0.48.0.tar.gz", hash = "sha256:531821ce6a2278168054add13421776c9f8e565cf39926e799fa02d6c29da920"},
+    {file = "django-allauth-0.51.0.tar.gz", hash = "sha256:ca1622733b6faa591580ccd3984042f12d8c79ade93438212de249b7ffb6f91f"},
 ]
 django-celery-beat = [
     {file = "django-celery-beat-2.2.1.tar.gz", hash = "sha256:97ae5eb309541551bdb07bf60cc57cadacf42a74287560ced2d2c06298620234"},
