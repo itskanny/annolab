@@ -21,7 +21,7 @@ jobs:
     steps:
 
       - name: Checkout Code Repository
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -59,7 +59,7 @@ jobs:
     steps:
 
       - name: Checkout Code Repository
-        uses: actions/checkout@v3.1.0
+        uses: actions/checkout@v3.2.0
 
       - name: Set up Python
         uses: actions/setup-python@v4
